@@ -17,6 +17,11 @@ import Container from '@material-ui/core/Container';
 import  Paper  from '@material-ui/core/Paper';
 import  Grid  from '@material-ui/core/Grid';
 
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Menu from '@material-ui/icons/Menu';
+
 import 'fontsource-roboto';
 
 const useStyles = makeStyles({
@@ -83,7 +88,18 @@ function App() {
         <div className="App">
         
           <header className="App-header">
-          <Typography variant="h2">Welcome to MUI</Typography>
+          <AppBar>
+            <Toolbar>
+              <IconButton>
+                <Menu/>
+              </IconButton>
+              <Typography variant="h6">
+                MUI THemeing
+              </Typography>
+              <Button> Login </Button>
+            </Toolbar>
+          </AppBar>
+          <Typography variant="h2" className="styled">Welcome to MUI</Typography>
           <Typography variant="subtitle1">Learn How to use Material ui</Typography>
           <ButtonStyled/>
           <TextField
@@ -93,9 +109,15 @@ function App() {
             label="time"
             placeholder="test@gmail.com"
           />
-          <Grid container>
-            <Grid item>
-              <Paper style={{ height:75, width:50, }}/>
+          <Grid container spacing="2" justify="center">
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height:75, width:'100%' }}/>
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height:75, width:'100%' }}/>
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height:75, width:'100%' }}/>
             </Grid>
           </Grid>
           <CheckboxExample/>
